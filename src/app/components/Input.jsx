@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Input({ name, type, placeholder }) {
+export default function Input({ title, name, type, placeholder }) {
   return (
     <div className="mb-6">
       <label
