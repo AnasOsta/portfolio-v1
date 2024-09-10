@@ -4,6 +4,7 @@ import React from "react";
 import NavItem from "./NavItem";
 import MenuOverlay from "./MenuOverlay";
 
+import { motion } from "framer-motion";
 import { useState } from "react";
 
 export default function Navbar() {
@@ -26,8 +27,20 @@ export default function Navbar() {
       href: "#contact",
     },
   ];
+
+  const variants = {
+    default: { height: 0 },
+    active: { height: "50%" },
+  };
+  function handleToggle() {
+    setNavbarOpen(!navbarOpen);
+  }
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
+    <motion.nav
+      variants={variants}
+      animate={navbarOpen ? "active" : "default"}
+      className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100"
+    >
       <div className="flex flex-wrap items-center justify-between mx-auto px-4 py-2">
         <Link
           href="/"
@@ -39,7 +52,7 @@ export default function Navbar() {
           {navbarOpen ? (
             <button
               className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
-              onClick={() => setNavbarOpen(false)}
+              onClick={handleToggle}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +72,7 @@ export default function Navbar() {
           ) : (
             <button
               className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
-              onClick={() => setNavbarOpen(true)}
+              onClick={handleToggle}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +101,7 @@ export default function Navbar() {
           </ul>
         </div>
       </div>
-      {navbarOpen && <MenuOverlay link={link} />}
-    </nav>
+      {navbarOpen && <MenuOverlay fun={handleToggle} link={link} />}
+    </motion.nav>
   );
 }
