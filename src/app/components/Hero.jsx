@@ -22,7 +22,7 @@ export default function Hero() {
             <br></br>
             <TypeAnimation
               sequence={[
-                "Demo",
+                "Anas",
                 1000,
                 "Web Developer",
                 1000,
