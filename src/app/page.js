@@ -5,7 +5,6 @@ import Projects from "./components/Projects";
 import Email from "./components/Email";
 import Footer from "./components/Footer";
 import Achieve from "./components/Achieve";
-
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-[#121212]">

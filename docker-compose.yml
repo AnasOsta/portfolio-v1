@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  nextjs-app:
+    container_name: nextjs-test
+    build: .
+    ports:
+      - "3001:3001" # ربط المنفذ 3001 بالحاوية
+    restart: always
+    environment:
+      - NODE_ENV=production
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: "512M"

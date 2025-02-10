@@ -8,7 +8,7 @@ import { TypeAnimation } from "react-type-animation";
 export default function Hero() {
   return (
     <section>
-      <div className="grid grid-cols-1 lg:grid-cols-12">
+      <div className=" grid grid-cols-1 lg:grid-cols-12">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -22,7 +22,7 @@ export default function Hero() {
             <br></br>
             <TypeAnimation
               sequence={[
-                "Anas",
+                "Demo",
                 1000,
                 "Web Developer",
                 1000,
