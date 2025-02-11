@@ -14,3 +14,5 @@ services:
         limits:
           cpus: "0.5"
           memory: "512M"
+    volumes:
+      - ./data:/app/data # تحديد مكان لحفظ البيانات
