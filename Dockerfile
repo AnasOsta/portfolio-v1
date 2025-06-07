@@ -1,5 +1,5 @@
 # 1️⃣ استخدام صورة رسمية من Node.js 18
-FROM node:18-alpine AS builder
+FROM node:22-alpine AS builder
 
 # 2️⃣ تعيين مسار العمل
 WORKDIR /app
@@ -15,7 +15,7 @@ COPY . .
 RUN npm run build
 
 # 6️⃣ تقليل حجم الصورة النهائية عبر استخدام مرحلة التشغيل فقط
-FROM node:18-alpine
+FROM node:22-alpine
 
 # 7️⃣ تعيين مسار العمل مجددًا
 WORKDIR /app
