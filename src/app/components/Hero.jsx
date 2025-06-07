@@ -56,6 +56,7 @@ export default function Hero() {
               src="/images/hero.jpeg"
               alt="hero image"
               className="rounded-full"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               fill
             />
           </div>

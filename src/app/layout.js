@@ -13,9 +13,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: `Anas ${
-    String.fromCharCode(8212) + String.fromCharCode(8212)
-  } Portfolio`,
+  title: `Anas ${String.fromCharCode(8212)} Portfolio`,
   description:
     "Welcome to Anas' portfolio — a creative developer showcasing clean design, smooth UX, and modern web solutions.",
   keywords: [
@@ -30,6 +28,8 @@ export const metadata = {
     "مطور ويب",
   ],
   robots: "index, follow",
+  applicationName: "Anas Portfolio",
+  mobileWebAppCapable: true, // ✅ الجديد
   icons: {
     icon: "/images/favicon.png",
     shortcut: "/images/favicon.png",
@@ -43,7 +43,7 @@ export const metadata = {
     siteName: "Anas Portfolio",
     images: [
       {
-        url: "/images/og.png", // غيّرها إذا ما عندك هالصورة
+        url: "/images/og.png",
         width: 1200,
         height: 630,
       },
@@ -56,7 +56,7 @@ export const metadata = {
     title: "Anas — Portfolio",
     description:
       "Welcome to Anas' portfolio — a creative developer showcasing clean design, smooth UX, and modern web solutions.",
-    images: ["/images/og.png"], // أو favicon.png مؤقتاً
+    images: ["/images/og.png"],
     creator: "@anasosta",
   },
   appleWebApp: {

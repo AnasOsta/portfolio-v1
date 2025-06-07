@@ -1,0 +1,16 @@
+{
+  "name": "Anas Portfolio",
+  "short_name": "Anas",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "description": "This is the personal portfolio of Anas showcasing his work, skills, and contact information.",
+  "icons": [
+    {
+      "src": "/images/favicon.png",
+      "sizes": "75x75",
+      "type": "image/png"
+    }
+  ]
+}
