@@ -3,31 +3,13 @@ import Link from "next/link";
 import React from "react";
 import NavItem from "./NavItem";
 import MenuOverlay from "./MenuOverlay";
+import { navLinks } from "../constants";
 
 import { motion } from "framer-motion";
 import { useState } from "react";
 
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
-  const link = [
-    {
-      name: "Home",
-      href: "#",
-    },
-    {
-      name: "About",
-      href: "#about",
-    },
-    {
-      name: "Projects",
-      href: "#projects",
-    },
-    {
-      name: "Contact",
-      href: "#contact",
-    },
-  ];
-
   const variants = {
     default: { height: 0 },
     active: { height: "50%" },
@@ -44,9 +26,9 @@ export default function Navbar() {
       <div className="flex flex-wrap items-center justify-between mx-auto px-4 py-2">
         <Link
           href="/"
-          className="md:text-5xl text-2xl text-white font-semibold"
+          className="md:text-5xl text-2xl text-white font-semibold tracking-tight"
         >
-          LOGO
+          Anas<span className="text-primary">Osta</span>
         </Link>
         <div className="mobile-menu block md:hidden">
           {navbarOpen ? (
@@ -93,7 +75,7 @@ export default function Navbar() {
         </div>
         <div className="menu hidden md:block md:w-auto " id="navbar">
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-8">
-            {link.map((item) => (
+            {navLinks.map((item) => (
               <NavItem key={item.name} href={item.href}>
                 {item.name}
               </NavItem>
@@ -101,7 +83,7 @@ export default function Navbar() {
           </ul>
         </div>
       </div>
-      {navbarOpen && <MenuOverlay fun={handleToggle} link={link} />}
+      {navbarOpen && <MenuOverlay fun={handleToggle} link={navLinks} />}
     </motion.nav>
   );
 }

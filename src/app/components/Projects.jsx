@@ -2,37 +2,10 @@
 import React, { useState, useRef } from "react";
 import ProjectCart from "./ProjectCart";
 import ProjectTag from "./ProjectTag";
+import { projects } from "../constants";
 
 import { motion, useInView } from "framer-motion";
-const PROJECT_DATA = [
-  {
-    id: 1,
-    imgUrl: "https://via.placeholder.com/300",
-    title: "Project 1",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    tag: ["All", "Test1"],
-    gitUrl: "https://github.com/anas-gharbi",
-    previewUrl: "https://anas-gharbi.github.io/portfolio-v1/",
-  },
-  {
-    id: 2,
-    imgUrl: "https://via.placeholder.com/300",
-    title: "Project 2",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    tag: ["All", "Test1"],
-    gitUrl: "https://github.com/anas-gharbi",
-    previewUrl: "https://anas-gharbi.github.io/portfolio-v1/",
-  },
-  {
-    id: 3,
-    imgUrl: "https://via.placeholder.com/300",
-    title: "Project 3",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    tag: ["All", "Test2"],
-    gitUrl: "https://github.com/anas-gharbi",
-    previewUrl: "https://anas-gharbi.github.io/portfolio-v1/",
-  },
-];
+
 const cartVariants = {
   initial: { y: 50, opacity: 0 },
   animate: { y: 0, opacity: 1 },
@@ -46,7 +19,7 @@ export default function Projects() {
     setTag(tag);
   };
 
-  const filteredProjects = PROJECT_DATA.filter((project) =>
+  const filteredProjects = projects.filter((project) =>
     project.tag.includes(tag)
   );
   return (
@@ -59,14 +32,14 @@ export default function Projects() {
           isSelected={tag === "All"}
         />
         <ProjectTag
-          name="Test1"
+          name="Client"
           onClick={handleTagChange}
-          isSelected={tag === "Test1"}
+          isSelected={tag === "Client"}
         />
         <ProjectTag
-          name="Test2"
+          name="Personal"
           onClick={handleTagChange}
-          isSelected={tag === "Test2"}
+          isSelected={tag === "Personal"}
         />
       </div>
       <ul

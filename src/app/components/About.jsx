@@ -4,48 +4,9 @@ import React from "react";
 
 import { useTransition, useState } from "react";
 import TabButton from "./TabButton";
+import { about } from "../constants";
 
 export default function About() {
-  const TAB_DATA = [
-    {
-      title: "Skills",
-      id: "skills",
-      content: (
-        <ul className="list-disc pl-2">
-          <li>Skill 1</li>
-          <li>Skill 2</li>
-          <li>Skill 3</li>
-          <li>Skill 4</li>
-          <li>.....</li>
-        </ul>
-      ),
-    },
-    {
-      title: "Experience",
-      id: "experience",
-      content: (
-        <ul className="list-disc pl-2">
-          <li>Experience 1</li>
-          <li>Experience 2</li>
-          <li>Experience 3</li>
-          <li>.....</li>
-        </ul>
-      ),
-    },
-    {
-      title: "Education",
-      id: "education",
-      content: (
-        <ul className="list-disc pl-2">
-          <li>Education 1</li>
-          <li>Education 2</li>
-          <li>Education 3</li>
-          <li>.....</li>
-        </ul>
-      ),
-    },
-  ];
-
   const [tabs, setTabs] = useState("skills");
   const [isPending, startTransition] = useTransition();
 
@@ -57,15 +18,25 @@ export default function About() {
 
   return (
     <section id="about" className="text-white">
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:py-16">
-        <img src={"https://via.placeholder.com/600"} alt="about" />
+      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 xl:gap-16 sm:py-16 xl:py-16">
+        <Image
+          width={1000}
+          height={1000}
+          className="w-full h-auto object-cover rounded-md"
+          src="/images/about.jpg"
+          alt="about"
+        />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-            ipsum officiis saepe quidem ullam rerum aperiam nihil voluptatibus
-            voluptatum.
+            {"I'm"} a full-stack developer with a strong focus on writing clean,
+            scalable code. My journey began with mastering the basics, and I’ve
+            since built real-world projects using React, Next.js, Tailwind CSS,
+            and Prisma. I value clear communication, respect deadlines, and
+            strive to deliver solutions that are both practical and
+            future-proof.
           </p>
+
           <div className="flex flex-row mt-8">
             <TabButton
               active={tabs === "skills"}
@@ -88,7 +59,7 @@ export default function About() {
           </div>
           <div className="mt-8">
             {" "}
-            {TAB_DATA.find((tab) => tab.id === tabs).content}
+            {about.find((tab) => tab.id === tabs).content}
           </div>
         </div>
       </div>

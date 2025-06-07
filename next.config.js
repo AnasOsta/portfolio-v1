@@ -1,8 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: "standalone",
-  basePath: "/test",
-  trailingSlash: true,
-};
+const nextConfig = {};
 
 module.exports = nextConfig;
